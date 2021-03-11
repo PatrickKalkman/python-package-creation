@@ -3,8 +3,15 @@ import random
 
 
 class CutMixImageDataGenerator():
-    """This class implements CutMix data augmentation, it uses two generators created from a single ImageDataGenerator   """
-    
+    """This class implements CutMix data augmentation, it uses two generators, both generators come
+    from a single ImageDataGenerator with shuffle=True so that we don't get two images that are the same. 
+
+    :param generator1: The first generator
+    :param generator2: The second generator 
+    :param img_size: The size of the images
+    :param batch_size: The batch size to use 
+    """
+
     def __init__(self, generator1, generator2, img_size, batch_size):
         self.batch_index = 0
         self.samples = generator1.samples

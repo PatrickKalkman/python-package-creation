@@ -1,6 +1,8 @@
 
 
 class MixupImageDataGenerator():
+    """ This class implements the Mixup algorithm via a Mixup ImageDataGenerator """
+
     def __init__(self, generator, dataframe, x_col, y_col, directory, batch_size, img_height, img_width, alpha=0.2, subset=None):
 
         self.batch_index = 0
@@ -35,16 +37,17 @@ class MixupImageDataGenerator():
         self.n = self.generator1.samples
 
     def reset_index(self):
-        """Reset the generator indexes array.
-        """
+        """Reset the generator indexes array."""
 
         self.generator1._set_index_array()
         self.generator2._set_index_array()
 
     def on_epoch_end(self):
+        """ """
         self.reset_index()
 
     def reset(self):
+        """ """
         self.batch_index = 0
 
     def __len__(self):
@@ -52,6 +55,7 @@ class MixupImageDataGenerator():
         return (self.n + self.batch_size - 1) // self.batch_size
 
     def get_steps_per_epoch(self):
+        """ """
         return self.n // self.batch_size
 
     def __next__(self):

@@ -1,3 +1,5 @@
-import tensorflow_helpers.augmentation.cutmix_imagedatagenerator
+import tensorflow_helpers
 
-help(tensorflow_helpers.augmentation.cutmix_imagedatagenerator.CutMixImageDataGenerator)
+help(tensorflow_helpers.augmentation.CutMixImageDataGenerator)
+help(tensorflow_helpers.augmentation.MixupImageDataGenerator)
+help(tensorflow_helpers.training_preparation.distribute_images)

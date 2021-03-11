@@ -3,9 +3,8 @@ import shutil
 import pathlib
 from os import path
 import pandas as pd
-from types import string, double, List
 
-def distribute_images(train_validation_split_ratio: double, csv_location: string, input_path: string):
+def distribute_images(train_validation_split_ratio: float, csv_location: str, input_path: str):
     
     """ Distribute images that are specified in the CSV file to a train and validation folder """
     """ The folders can then be used by the TensorFlow ImageDataGenerator 
@@ -43,7 +42,7 @@ def create_folder_structure():
     pathlib.Path("./train/validate").mkdir(parents=True, exist_ok=True)
 
 
-def copy_images(source_list: List[string], source_path: string, destination_path: string):
+def copy_images(source_list: list[str], source_path: str, destination_path: str):
     """ Copy the images in the source_list from the source_path to the destination_path
 
     :param source_list: The list with images
@@ -55,7 +54,7 @@ def copy_images(source_list: List[string], source_path: string, destination_path
         shutil.copyfile(f'{source_path}{image}', f'./train/{destination_path}/{image}')
 
 
-def copy_test_images(source_list: List[string], input_path: string):
+def copy_test_images(source_list: list[str], input_path: str):
     """ Copy the all the images in source_list from input_path to the test folder
 
     :param source_list: An list with all the image names

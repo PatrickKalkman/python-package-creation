@@ -4,7 +4,7 @@ setup(
     author='Patrick Kalkman',
     description='helper functions for image augmentation and training data distribution',
     name='tensorflow_helpers',
-    version='0.2.0',
+    version='0.2.1',
     packages=find_packages(include=['tensorflow_helpers','tensorflow_helpers.*']),
     install_requires=[
          'pandas>=1.2.3',
